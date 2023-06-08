@@ -145,7 +145,8 @@ module Microbus
       bundle_config = '.bundle/config'
       # The below bundle package --all may fail if a pre-existing bundle
       # config exists.
-      File.delete(bundle_config) if File.exist?(bundle_config)
+      # PC-15465 Testing
+      # File.delete(bundle_config) if File.exist?(bundle_config)
       # Package our dependencies, including git dependencies so that
       # docker doesn't need to fetch them all again (or need ssh keys.)
       # Package is much faster than bundle install --path and poses less
