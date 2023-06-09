@@ -155,7 +155,7 @@ module Microbus
       # Bundle package --all adds a "remembered setting" that causes
       # bundler to keep gems from all groups; delete config to allow
       # bundle install to prune.
-      File.delete(bundle_config) if File.exist?(bundle_config)
+      # File.delete(bundle_config) if File.exist?(bundle_config)
     end
 
     def declare_clean_task # rubocop:disable MethodLength, AbcSize
