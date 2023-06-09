@@ -145,7 +145,8 @@ module Microbus
       bundle_config = '.bundle/config'
       # The below bundle package --all may fail if a pre-existing bundle
       # config exists.
-      File.delete(bundle_config) if File.exist?(bundle_config)
+      # PC-15465 Testing
+      # File.delete(bundle_config) if File.exist?(bundle_config)
       # Package our dependencies, including git dependencies so that
       # docker doesn't need to fetch them all again (or need ssh keys.)
       # Package is much faster than bundle install --path and poses less
@@ -154,7 +155,7 @@ module Microbus
       # Bundle package --all adds a "remembered setting" that causes
       # bundler to keep gems from all groups; delete config to allow
       # bundle install to prune.
-      File.delete(bundle_config) if File.exist?(bundle_config)
+      # File.delete(bundle_config) if File.exist?(bundle_config)
     end
 
     def declare_clean_task # rubocop:disable MethodLength, AbcSize
